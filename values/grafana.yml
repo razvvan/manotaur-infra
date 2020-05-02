@@ -1,0 +1,18 @@
+persistence:
+  enabled: true
+  existingClaim: grafana
+  accessModes:
+    - ReadWriteOnce
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-production"
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - "${grafana_host}"
+  tls:
+   - secretName: "${grafana_host}-tls"
+     hosts:
+       - "${grafana_host}"
+adminPassword: "${grafana_password}"

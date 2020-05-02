@@ -1,0 +1,13 @@
+rabbitmq:
+  plugins: "rabbitmq_management rabbitmq_peer_discovery_k8s rabbitmq_web_mqtt"
+  existingPasswordSecret: rabbitmq
+  existingErlangSecret: rabbitmq
+
+service:
+  extraContainerPorts:
+    - name: mqtt
+      containerPort: 1883
+  extraPorts:
+    - name: mqtt
+      port: 1883
+      targetPort: mqtt

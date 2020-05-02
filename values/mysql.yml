@@ -1,0 +1,3 @@
+image: "mysql"
+imageTag: "8.0"
+existingSecret: mysql-secret

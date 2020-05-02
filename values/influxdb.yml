@@ -1,0 +1,11 @@
+image:
+  tag: 1.8.0
+
+architecture: standalone
+database: stocks
+adminUser:
+  name: "admin"
+  pwd: "${admin_password}"
+user:
+  name: "user"
+  pwd: "${user_password}"
